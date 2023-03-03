@@ -1,0 +1,446 @@
+/* @tailwind base;
+@tailwind components;
+@tailwind utilities; */
+
+
+html,
+body {
+  padding: 0;
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
+    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+@media (prefers-color-scheme: dark) {
+  html {
+    color-scheme: dark;
+  }
+
+  body {
+    color: white;
+    background: black;
+  }
+}
+
+
+
+
+
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+.custom-field.two {
+  position: relative;
+  font-size: 14px;
+  font-family: sans-serif;
+  border-top: 30px solid transparent;
+  margin-bottom: 5px;
+  --field-padding: 10px;
+  display: flex;
+  cursor: text
+}
+
+.custom-field.two input {
+  border: none;
+  -webkit-appearance: none;
+  -ms-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  background: #cbc8c8;
+  padding: var(--field-padding);
+  border-radius: 3px;
+  width: 300px;
+  outline: none;
+  font-size: 14px;
+}
+
+.custom-field.two .placeholder {
+  position: absolute;
+  left: var(--field-padding);
+  width: calc(100% - (var(--field-padding) *2));
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  top: 22px;
+  line-height: 100%;
+  transform: translateY(-75%);
+  color: #676464;
+  transition: top 0.3s ease, color 0.3s ease, font-size 0.3s ease;
+}
+
+.custom-field input.dirty+.placeholder,
+.custom-field input:focus+.placeholder,
+.custom-field input:not(:placeholder-shown)+.placeholder {
+  top: -10px;
+  font-size: 10px;
+  color: #222;
+}
+
+.custom-field.two .error-message {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  padding: 0 8px;
+  font-size: 12px;
+  background: #d30909;
+  color: #fff;
+  height: 24px;
+}
+
+.custom-field.two .error-message:empty {
+  opacity: 0;
+}
+
+.custom-field.two {
+  --draw-duration: 0.1s;
+  --draw-color: #222;
+  --draw-line-width: 2px;
+  --draw-easing: linear;
+}
+
+.custom-field.two .border {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  left: 0;
+  top: 0;
+
+  display: flex;
+  align-items: center;
+  padding-left: 12px;
+  border-radius: 3px;
+
+}
+
+.custom-field.two .border::after,
+.custom-field.two .border::before {
+  content: "";
+  width: 0;
+  height: 0;
+  display: inline-block;
+  position: absolute;
+  border-radius: 3px;
+}
+
+.custom-field.two .border::before {
+  left: 0;
+  bottom: 0;
+  border-right: 0px solid var(--draw-color);
+  border-bottom: 0px solid var(--draw-color);
+  transition: border 0s linear calc(var(--draw-duration) * 4),
+    height var(--draw-duration) var(--draw-easing) calc(var(--draw-duration) * 2),
+    width var(--draw-duration) var(--draw-easing) calc(var(--draw-duration) * 3);
+}
+
+.custom-field.two .border::before {
+  left: 0;
+  bottom: 0;
+  border-right: 0px solid var(--draw-color);
+  border-bottom: 0px solid var(--draw-color);
+  transition: border 0s linear calc(var(--draw-duration) * 4),
+    height var(--draw-duration) var(--draw-easing) calc(var(--draw-duration) * 2),
+    width var(--draw-duration) var(--draw-easing) calc(var(--draw-duration) * 3);
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+.custom-field.three {
+  position: relative;
+  font-size: 14px;
+  font-family: sans-serif;
+  border-top: 30px solid transparent;
+  margin-bottom: 5px;
+  --field-padding: 10px;
+  display: flex;
+  width: 300px;
+
+}
+
+.custom-field.three input {
+  border: none;
+  -webkit-appearance: none;
+  -ms-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  background: #f2f2f2;
+  padding: var(--field-padding);
+  border-radius: 3px;
+  width: 300px;
+  outline: none;
+  font-size: 14px;
+}
+
+.custom-field.three .placeholder {
+  position: absolute;
+  left: var(--field-padding);
+  width: calc(100% - (var(--field-padding) *2));
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  top: 22px;
+  line-height: 100%;
+  transform: translateY(-75%);
+  color: #aaa;
+  transition: top 0.3s ease, color 0.3s ease, font-size 0.3s ease;
+}
+
+.custom-field input.dirty+.placeholder,
+.custom-field input:focus+.placeholder,
+.custom-field input:not(:placeholder-shown)+.placeholder {
+  top: -10px;
+  font-size: 10px;
+  color: #222;
+}
+
+.custom-field.three .error-message {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  padding: 0 8px;
+  font-size: 12px;
+  background: #d30909;
+  color: #fff;
+  height: 24px;
+}
+
+.custom-field.three .error-message:empty {
+  opacity: 0;
+}
+
+.custom-field.three {
+  --draw-duration: 0.1s;
+  --draw-color: #222;
+  --draw-line-width: 2px;
+  --draw-easing: linear;
+}
+
+.custom-field.three .border {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  left: 0;
+  top: 0;
+
+  display: flex;
+  align-items: center;
+  padding-left: 12px;
+  border-radius: 3px;
+}
+
+.custom-field.three .border::after,
+.custom-field.three .border::before {
+  content: "";
+  width: 0;
+  height: 0;
+  display: inline-block;
+  position: absolute;
+  border-radius: 3px;
+}
+
+.custom-field.three .border::before {
+  left: 0;
+  bottom: 0;
+  border-right: 0px solid var(--draw-color);
+  border-bottom: 0px solid var(--draw-color);
+  transition: border 0s linear calc(var(--draw-duration) * 4),
+    height var(--draw-duration) var(--draw-easing) calc(var(--draw-duration) * 2),
+    width var(--draw-duration) var(--draw-easing) calc(var(--draw-duration) * 3);
+}
+
+.custom-field.three .border::after {
+  right: 0;
+  top: 0;
+  border-left: 0px solid var(--draw-color);
+  border-top: 0px solid var(--draw-color);
+  transition: border 0s linear calc(var(--draw-duration) * 2),
+    height var(--draw-duration) var(--draw-easing),
+    width var(--draw-duration) var(--draw-easing) var(--draw-duration);
+}
+
+.custom-field.three input:focus~.border::before,
+.custom-field.three input:not(:placeholder-shown)~.border::before,
+.custom-field.three input.dirty~.border::before,
+.custom-field.three input:focus~.border::after,
+.custom-field.three input:not(:placeholder-shown)~.border::after,
+.custom-field.three input.dirty~.border::after {
+  width: 100%;
+  height: 100%;
+  border-width: var(--draw-line-width);
+}
+
+.custom-field.three input:not(:placeholder-shown)~.border::before,
+.custom-field.three input.dirty~.border::before,
+.custom-field.three input:focus~.border::before {
+  transition-delay: 0s, var(--draw-duration), 0s;
+}
+
+.custom-field.three input:not(:placeholder-shown)~.border::after,
+.custom-field.three input.dirty~.border::after,
+.custom-field.three input:focus~.border::after {
+  transition-delay: calc(var(--draw-duration) * 2),
+    calc(var(--draw-duration) * 3), calc(var(--draw-duration) * 2);
+}
+
+/*Button*/
+
+Button {
+  margin: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100px;
+  height: 30px;
+  color: #fff;
+  border-radius: 5px;
+  font-family: 'Lato', sans-serif;
+  font-weight: 700;
+  background: transparent;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  position: relative;
+  display: inline-block;
+  box-shadow: inset 2px 2px 2px 0px rgba(255, 255, 255, .5),
+    7px 7px 20px 0px rgba(0, 0, 0, .1),
+    4px 4px 5px 0px rgba(0, 0, 0, .1);
+  outline: none;
+  background: #b621fe;
+  border: none;
+  z-index: 1;
+}
+
+Button:after {
+  position: absolute;
+  content: "";
+  width: 0;
+  height: 100%;
+  top: 0;
+  right: 0;
+  z-index: -1;
+  background-color: #663dff;
+  border-radius: 5px;
+  box-shadow: inset 2px 2px 2px 0px rgba(255, 255, 255, .5),
+    7px 7px 20px 0px rgba(0, 0, 0, .1),
+    4px 4px 5px 0px rgba(0, 0, 0, .1);
+  transition: all 0.3s ease;
+}
+
+Button:hover {
+  color: #fff;
+}
+
+Button:hover:after {
+  left: 0;
+  width: 100%;
+}
+
+Button:active {
+  top: 2px;
+}
+
+/*user*/
+.form-createUser {
+
+  align-items: center;
+  justify-content: center;
+  padding: 20px 20px;
+  margin-left: 200px;
+}
+
+/*product*/
+.form-createProduct {
+  width: 725px;
+  height: 400px;
+  align-items: center;
+  justify-content: center;
+  padding: 20px 20px;
+  margin-left: 200px;
+  border: 1px solid #222;
+  border-radius: 5px;
+  background-color: #4cb174;
+}
+
+.form-createProduct .details input {
+  width: 100px;
+
+}
+
+.form-createProduct .details {
+
+  display: flex;
+
+}
+
+.form-createProduct .details-1 input {
+  width: 100px;
+}
+
+
+.form-createProduct .details-1 {
+
+  display: flex;
+}
+
+.det-main {
+
+  display: flex;
+}
+
+h2 {
+  color: blueviolet;
+  justify-items: center;
+  align-items: center;
+  justify-content: center;
+
+}
+
+.det {
+  margin-right: 80px;
+
+}
+
+.details {
+  margin-right: 20px;
+  gap: 80px;
+}
+
+.details-1 {
+  margin-right: 50px;
+  gap: 80px;
+}
+
+.form-createProduct button {
+  float: right;
+}
+
+.form-createUser {
+  height: 700px;
+  width: 300px;
+  align-items: center;
+  justify-content: center;
+  padding: 20px 20px;
+  margin-left: 200px;
+
+
+}
+
+.form-createUser button {
+  float: right;
+  margin-left: 20px;
+}

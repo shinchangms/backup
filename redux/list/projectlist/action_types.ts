@@ -1,0 +1,7 @@
+export const ActionTypes = {
+  INIT: "INIT",
+  LIST_PENDING: " LIST_PENDING",
+  LIST_FULFILLED: " LIST_FULFILLED",
+  LIST_REJECTED: " LIST_REJECTED",
+  LOGOUT: "LOGOUT",
+};

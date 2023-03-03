@@ -1,10 +1,9 @@
 // import * as React from "react";
 // import "../app/globals.css";
-import Image from "next/image";
-import MyImage from "../images/4.jpg";
+// import MyImage from "../images/displayImage.jpg";
 // import "../images/displayImage.jpg";
 import Input from "../components/input/Input";
-// import { LoginProps } from "../components/login/LoginProps";
+import { LoginProps } from "../components/LoginProps";
 import Button from "../components/button/Button";
 import React, {  useEffect } from 'react';
 function Welcome() {
@@ -27,21 +26,19 @@ useEffect(() => {
 },[resource])
 
   return (
-    <div className="bg-slate-900 text-white min-h-screen max-h-screen top-0 left-0 right-0 bottom-0 flex items-center justify-center ">
+    <div className="bg-slate-900 text-white min-h-screen max-h-screen top-0 left-0 right-0 bottom-0 flex items-center justify-center">
       <div className="  m-20 mx-28 p-10 w-screen border rounded-2xl bg-teal-500 flex shadow-2xl ">
-        <div className="  relative border-r-2 mr-5 w-2/3 p-2 flex justify-center items-center">
-          
-          {/* <Image
-					className="inline-block overflow-hidden rounded-2xl mr-10 "
-            src={MyImage}
-            height={1500}
-            width={1200}
+        <div className="  border-r-2 mr-5 w-2/3 p-2 flex justify-center items-center">
+          <div className="text-9xl font-extrabold"> NOOL KANDU</div>
+          {/* <img
+            src="images/displayImage.jpg"
+            height={300}
+            width={200}
             alt="thread image"
           /> */}
-					<div className="   text-9xl font-extrabold"> NOOL KANDU</div>
         </div>
         <div className="w-1/3 h-128 rounded-lg bg-slate-900/75 flex flex-col items-center justify-center">
-          <h1 className=" text-white text-2xl font-bold pb-4 mb-4">Welcome Back!</h1>
+          <h1 className=" text-white text-2xl font-bold mb-4">Welcome Back!</h1>
           <form className="flex flex-col w-2/3">
             {/* <label className="mb-2 font-bold" htmlFor="email">
               Email
@@ -54,13 +51,10 @@ useEffect(() => {
               required
             /> */}
             
-           <span className="mb-3">
-             <Input
-					className=" "
+        <Input
+					className=""
 					htmlFor={"email"}
-					
-					label={"Email-Id"}
-					
+          label={"Email-Id"}
 					type="email"
 					name="email"
 					id="email"
@@ -68,9 +62,7 @@ useEffect(() => {
 					onChange={e => setEmail(e.target.value)}
 					value={email}
 				/>
-           </span>
-        <span className="mb-3">
-          <Input
+        <Input
 					className=""
 					htmlFor={"password"}
 					label={"Password"}
@@ -81,8 +73,7 @@ useEffect(() => {
 					onChange={e => setPassword(e.target.value)}
 					value={email}
 				/>
-        </span>
-            {/* <label className="mb-2 font-bold" htmlFor="password">
+            <label className="mb-2 font-bold" htmlFor="password">
               Password
             </label>
             <input
@@ -91,14 +82,14 @@ useEffect(() => {
               name="password"
               placeholder="password"
               required
-            />*/}
+            />
             <span className="text-sm"> 
               <input type="checkbox" /> Remember me
             </span>
             <span className=" text-right text-sm">
               <a href="">Forgot password?</a>
             </span>
-             <a href="/Welcome" rel="noopener noreferrer" className=" flex justify-center bg-teal-500 hover:bg-teal-200 text-black font-bold py-2 my-4 rounded-lg">
+             <a href="/User" rel="noopener noreferrer" className=" flex justify-center bg-teal-500 hover:bg-teal-200 text-black font-bold py-2 my-4 rounded-lg">
             <Button 
 					className="	"
 					label={"Login"}
